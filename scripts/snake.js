@@ -11,6 +11,7 @@ class Snake {
         this.canvas = document.getElementById("snake");
         this.ctx = this.canvas.getContext('2d');
 
+
         this.game = this.game.bind(this);
         this.keyPush = this.keyPush.bind(this);
         this.start();
@@ -25,14 +26,14 @@ class Snake {
         this.px+= this.xv;
         this.py+= this.yv;
 
-        if (this.px<0) {
+        if (this.px < 0) {
             this.px = this.tc - 1;
         }
 
         if (this.px > this.tc - 1) {
             this.px = 0;
         }
-        if (this.py <0) {
+        if (this.py < 0) {
             this.py = this.tc - 1;
         }
         if (this.py > this.tc - 1) {
@@ -67,7 +68,6 @@ class Snake {
         }
         this.ctx.fillStyle = "red";
         this.ctx.fillRect(this.ax * this.gs, this.ay * this.gs, this.gs - 2, this.gs - 2);
-        requestAnimationFrame(this.game);
     }
 
     keyPush(evt) {
